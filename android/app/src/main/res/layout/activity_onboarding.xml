@@ -7,4 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".initialscreen.OnboardingActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_onboarding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginTop="363dp"
+        android:layout_marginBottom="260dp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

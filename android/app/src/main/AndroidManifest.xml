@@ -19,11 +19,12 @@
             android:resource="@layout/item_spinner" />
 
         <activity
-            android:name=".initialscreen.OnboardingActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".initialscreen.OnboardingActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
