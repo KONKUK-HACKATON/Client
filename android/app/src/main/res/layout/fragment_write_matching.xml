@@ -42,9 +42,9 @@
 
 
     <EditText
-        android:id="@+id/et_matching_main"
-        android:layout_width="334dp"
-        android:layout_height="39dp"
+        android:id="@+id/et_write_matching_title"
+        android:layout_width="310dp"
+        android:layout_height="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="114dp"
@@ -52,5 +52,29 @@
         android:background="@drawable/edit_text_matching_bulletin"
         android:hint="제목을 입력하세요."
         android:textSize="13sp"/>
+
+    <EditText
+        android:id="@+id/et_write_matching_contents"
+        android:layout_width="310dp"
+        android:layout_height="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_write_matching_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/edit_text_matching_bulletin"
+        android:hint="내용을 입력하세요."
+        android:gravity="start"
+        android:textSize="13sp"/>
+    
+    <TextView
+        android:layout_width="185dp"
+        android:layout_height="22dp"
+        android:text="게시글 종류를 선택해주세요."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_write_matching_contents"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="36dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
