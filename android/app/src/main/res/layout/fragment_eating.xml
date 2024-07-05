@@ -7,7 +7,7 @@
     tools:context=".initialscreen.eatingFragment">
 
     <ImageView
-        android:id="@+id/iv_back_btn_nation"
+        android:id="@+id/iv_back_btn_eating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/btn_back"
@@ -20,7 +20,7 @@
         />
 
     <ImageView
-        android:id="@+id/iv_bar_progress_grey_nation"
+        android:id="@+id/iv_bar_progress_grey_eating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/bar_progress_grey"
@@ -33,13 +33,13 @@
         />
 
     <ImageView
-        android:id="@+id/iv_bar_progress_color_nation"
+        android:id="@+id/iv_bar_progress_color_eating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/bar_progress_color"
-        app:layout_constraintStart_toStartOf="@id/iv_bar_progress_grey_nation"
-        app:layout_constraintTop_toTopOf="@id/iv_bar_progress_grey_nation"
-        app:layout_constraintBottom_toBottomOf="@id/iv_bar_progress_grey_nation"
+        app:layout_constraintStart_toStartOf="@id/iv_bar_progress_grey_eating"
+        app:layout_constraintTop_toTopOf="@id/iv_bar_progress_grey_eating"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bar_progress_grey_eating"
         />
 
     <TextView
@@ -58,7 +58,7 @@
         />
 
     <ImageView
-        android:id="@+id/iv_next_btn_nation"
+        android:id="@+id/iv_next_btn_eating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/btn_finish"
@@ -71,7 +71,7 @@
         />
 
     <EditText
-        android:id="@+id/et_nation_input"
+        android:id="@+id/et_eating_input"
         android:layout_width="324dp"
         android:layout_height="49dp"
         android:background="@drawable/edit_text_matching_bulletin"

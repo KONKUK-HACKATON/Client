@@ -16,7 +16,15 @@ class nationFragment : Fragment() {
     ): View? {
         binding=FragmentNationBinding.inflate(inflater,container,false)
         binding.ivNextBtnNation.setOnClickListener{
-            val fragment=eatingFragment()
+            val nation=binding.etNationInput.text.toString()
+            val language = binding.etLanguageInput.text.toString()
+            val bundle = arguments ?: Bundle()  // 이전 번들을 가져옴
+            bundle.putString("nation", nation)  // 새로운 데이터를 추가
+            bundle.putString("language", language)
+
+            val fragment=eatingFragment().apply {
+                arguments=bundle
+            }
             parentFragmentManager.beginTransaction()
                 .replace(R.id.login_frame,fragment)
                 .commit()
