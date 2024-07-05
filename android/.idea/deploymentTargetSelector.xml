@@ -7,7 +7,7 @@
         <DropdownSelection timestamp="2024-07-05T12:40:03.026392Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\82107\.android\avd\kurushfe_1_API_34.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\iksun\.android\avd\Kurush_API_35.avd" />
             </handle>
           </Target>
         </DropdownSelection>

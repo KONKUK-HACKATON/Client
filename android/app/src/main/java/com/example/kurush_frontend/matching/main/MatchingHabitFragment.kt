@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.kurush_frontend.R
 import com.example.kurush_frontend.data.HorizonData
 import com.example.kurush_frontend.data.VerticalData
 import com.example.kurush_frontend.databinding.FragmentMatchingHabitBinding
+import com.example.kurush_frontend.matching.add.MatchingAddFragment
 import com.example.kurush_frontend.matching.main.adapter.HorizonRVAdapter
 import com.example.kurush_frontend.matching.main.adapter.VerticalRVAdapter
 
@@ -28,6 +30,15 @@ class MatchingHabitFragment : Fragment() {
         binding.rvMatchingHabitHorizon.adapter = HorizonRVAdapter(dummyItemsHor)
 
         binding.rvMatchingHabitVertical.adapter = VerticalRVAdapter(dummyItemsVer)
+
+        binding.ivMatchingHabitAddBtn.setOnClickListener{
+            binding.ivMatchingHabitAddBtn.setImageResource(R.drawable.btn_add_match_select)
+
+            parentFragment?.parentFragmentManager?.beginTransaction()
+                ?.replace(R.id.main_frm, MatchingAddFragment())
+                ?.commit()
+
+        }
 
         return binding.root
     }

@@ -12,9 +12,9 @@
         android:layout_width="334dp"
         android:layout_height="39dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="57dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/edit_text_matching_bulletin"
         android:hint="키워드를 입력해 원하는 게시글을 찾아보세요."
         android:textSize="13sp"/>

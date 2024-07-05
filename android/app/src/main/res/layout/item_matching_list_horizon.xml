@@ -6,7 +6,7 @@
 
     <View
         android:layout_width="138dp"
-        android:layout_height="91dp"
+        android:layout_height="115dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,21 +34,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="33.5dp"
-        android:text="학과"
+        android:text="대학"
         android:textColor="#3B3B3B"
         android:textFontWeight="400"
         android:textSize="10sp"
         android:textAlignment="center"/>
 
     <View
-
-        android:id="@+id/v_item_matching_list_horizon_v2"
-        android:layout_width="80dp"
+        android:id="@+id/v_item_matching_list_horizon_v1"
+        android:layout_width="70dp"
         android:layout_height="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="21dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginStart="37dp"
+        android:background="@drawable/shape_100radius_eeeeee"/>
+
+    <TextView
+        android:id="@+id/tv_item_matching_list_horizon_college"
+        android:layout_width="61dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toTopOf="@id/v_item_matching_list_horizon_v1"
+        app:layout_constraintBottom_toBottomOf="@id/v_item_matching_list_horizon_v1"
+        app:layout_constraintStart_toStartOf="@id/v_item_matching_list_horizon_v1"
+        app:layout_constraintEnd_toEndOf="@id/v_item_matching_list_horizon_v1"
+        android:text="OOOO 대학"
+        android:textSize="10sp"
+        android:textFontWeight="400"
+        android:textAlignment="center"
+        android:textColor="#3B3B3B"/>
+
+
+    <View
+        android:id="@+id/v_item_matching_list_horizon_v2"
+        android:layout_width="91dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="58dp"
+        android:layout_marginStart="37dp"
         android:background="@drawable/shape_100radius_eeeeee"/>
 
 
@@ -65,6 +89,19 @@
         android:textFontWeight="400"
         android:textAlignment="center"
         android:textColor="#3B3B3B"/>
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="15dp"
+        android:text="학과"
+        android:textSize="10sp"
+        android:textFontWeight="400"
+        android:textColor="#3B3B3B"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="58dp"
+        android:textAlignment="center"/>
+    
     
     <TextView
         android:layout_width="40dp"
@@ -75,7 +112,7 @@
         android:textColor="#3B3B3B"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="63.5dp"
+        android:layout_marginTop="81.7dp"
         android:textAlignment="center"/>
 
     <View
@@ -84,7 +121,7 @@
         android:layout_height="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="81.7dp"
         android:layout_marginStart="37dp"
         android:background="@drawable/shape_100radius_eeeeee"/>
     
@@ -109,7 +146,7 @@
         android:layout_height="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/v_item_matching_list_horizon_v3"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="81.7dp"
         android:layout_marginStart="4dp"
         android:background="@drawable/shape_100radius_eeeeee"/>
 

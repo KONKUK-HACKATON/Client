@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main, eatingFragment())
-            .commit()
 
 //        supportFragmentManager.beginTransaction().replace(R.id.main_frm, )
 //            .commitAllowingStateLoss()
