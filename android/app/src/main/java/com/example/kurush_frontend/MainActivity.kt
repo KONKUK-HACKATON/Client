@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.kurush_frontend.databinding.ActivityMainBinding
 import com.example.kurush_frontend.initialscreen.departmentFragment
+import com.example.kurush_frontend.initialscreen.eatingFragment
 import com.example.kurush_frontend.initialscreen.studennumFragment
 import com.example.kurush_frontend.matching.main.MatchingMainFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main, studennumFragment())
+            .replace(R.id.main, eatingFragment())
             .commit()
 
 //        supportFragmentManager.beginTransaction().replace(R.id.main_frm, )
