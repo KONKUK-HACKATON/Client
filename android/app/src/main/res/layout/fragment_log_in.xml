@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".initialscreen.logInFragment">
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:textColor="#5E5E5E"
+        android:textSize="20sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="306dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="482dp"
+        />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="333px"
+        android:layout_height="wrap_content"
+        android:hint="아이디를 입력해주세요."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="457dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="#5E5E5E"
+        android:textSize="20sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="378dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="410dp"
+        />
+
+    <EditText
+        android:id="@+id/et_pw"
+        android:layout_width="333px"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_pw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="385dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="411.15dp"
+        android:layout_marginBottom="391.96dp"
+        android:layout_marginEnd="26.18dp">
+
+        <ImageView
+            android:id="@+id/iv_pw_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_invisible"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/iv_pw_visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_visible"
+            />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_login"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="463dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:fontFamily="@font/pretendardregular"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_login_btn"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="157dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도움말"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_join"
+        android:layout_marginStart="176dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginTop="206dp"
+        />
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

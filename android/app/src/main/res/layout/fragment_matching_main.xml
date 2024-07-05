@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".matching.main.MatchingMainFragment"
+    android:background="#F5F5F5">
+
+    <EditText
+        android:id="@+id/et_matching_main"
+        android:layout_width="334dp"
+        android:layout_height="39dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/edit_text_matching_bulletin"
+        android:hint="키워드를 입력해 원하는 게시글을 찾아보세요."
+        android:textSize="13sp"/>
+
+    <ImageView
+        android:id="@+id/iv_matching_main_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/search"
+        app:layout_constraintTop_toTopOf="@id/et_matching_main"
+        app:layout_constraintBottom_toBottomOf="@id/et_matching_main"
+        app:layout_constraintEnd_toEndOf="@id/et_matching_main"
+        android:layout_marginEnd="12dp"/>
+
+    <View
+        android:id="@+id/v_matching_main_v1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@id/et_matching_main"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_mathcing_main_matching_bulletin"
+        android:layout_width="120dp"
+        android:layout_height="28dp"
+        app:layout_constraintTop_toTopOf="@id/v_matching_main_v1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:textSize="24sp"
+        android:text="매칭 게시판"
+        android:textFontWeight="700"
+        android:lineHeight="28.64sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pretendardregular"/>
+
+    <TextView
+        android:id="@+id/tv_matching_main_tv1"
+        android:layout_width="293dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_matching_main_v1"
+        app:layout_constraintTop_toBottomOf="@id/tv_mathcing_main_matching_bulletin"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:lineHeight="14.32sp"
+        android:textSize="12sp"
+        android:text="주제별 게시글을 업로드하고,\n 나에게 딱 맞는 매칭 상대를 찾아 학교 생활을 함께 즐겨요!"
+        android:textFontWeight="600"
+        android:fontFamily="@font/pretendardregular"
+        android:textColor="#366943"/>
+    
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_matching_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicator="@color/black"
+        app:tabRippleColor="#DBDBDB"
+        app:tabIndicatorFullWidth="true"
+        app:layout_constraintTop_toBottomOf="@id/v_matching_main_v1"/>
+    
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_matching_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tl_matching_main"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

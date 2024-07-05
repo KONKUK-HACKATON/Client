@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".matching.main.MatchingFreeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_matching_free_matching_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나의 매칭 목록"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pretendardregular"
+        android:textFontWeight="700"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="18.5dp"
+        android:layout_marginStart="12dp"/>
+
+    <ImageView
+        android:id="@+id/iv_matching_free_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_add_match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="13.5dp"
+        android:layout_marginEnd="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_matching_free_horizon"
+        app:layout_constraintTop_toBottomOf="@id/tv_matching_free_matching_list"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_matching_list_horizon"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
