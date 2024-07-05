@@ -32,51 +32,287 @@
         android:id="@+id/v_help_main_v1"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        app:layout_constraintTop_toBottomOf="@id/et_matching_main"
+        app:layout_constraintTop_toBottomOf="@id/et_help_main"
         android:layout_marginTop="15dp"
         android:background="@color/white"/>
 
+
     <TextView
-        android:id="@+id/tv_mathcing_main_matching_bulletin"
-        android:layout_width="120dp"
+        android:id="@+id/tv_help_main_matching_bulletin"
+        android:layout_width="153dp"
         android:layout_height="28dp"
-        app:layout_constraintTop_toTopOf="@id/v_matching_main_v1"
+        app:layout_constraintTop_toTopOf="@id/v_help_main_v1"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="12dp"
         android:textSize="24sp"
-        android:text="매칭 게시판"
+        android:text="학교정보도우미"
         android:textFontWeight="700"
         android:lineHeight="28.64sp"
         android:textColor="@color/black"
         android:fontFamily="@font/pretendardregular"/>
 
     <TextView
-        android:id="@+id/tv_matching_main_tv1"
+        android:id="@+id/tv_help_main_tv1"
         android:layout_width="293dp"
         android:layout_height="28dp"
-        app:layout_constraintBottom_toBottomOf="@id/v_matching_main_v1"
-        app:layout_constraintTop_toBottomOf="@id/tv_mathcing_main_matching_bulletin"
+        app:layout_constraintBottom_toBottomOf="@id/v_help_main_v1"
+        app:layout_constraintTop_toBottomOf="@id/tv_help_main_matching_bulletin"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="11dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="6dp"
         android:lineHeight="14.32sp"
         android:textSize="12sp"
-        android:text="주제별 게시글을 업로드하고,\n 나에게 딱 맞는 매칭 상대를 찾아 학교 생활을 함께 즐겨요!"
+        android:text="여기저기 흩어져 있던 학교 정보를\n나에게 익숙한 언어로 한 번에 모아볼 수 있어요."
         android:textFontWeight="600"
         android:fontFamily="@font/pretendardregular"
         android:textColor="#366943"/>
 
     <ImageView
-        android:id="@+id/iv_matching_main_search"
+        android:id="@+id/iv_help_main_search_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/search"
-        app:layout_constraintTop_toTopOf="@id/et_matching_main"
-        app:layout_constraintBottom_toBottomOf="@id/et_matching_main"
-        app:layout_constraintEnd_toEndOf="@id/et_matching_main"
+        app:layout_constraintTop_toTopOf="@id/et_help_main"
+        app:layout_constraintBottom_toBottomOf="@id/et_help_main"
+        app:layout_constraintEnd_toEndOf="@id/et_help_main"
         android:layout_marginEnd="12dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_jirung"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="289dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="131dp"
+        />
+
+    <View
+        android:id="@+id/fl_info"
+        android:layout_width="match_parent"
+        android:layout_height="247dp"
+        android:background="#F5F5F5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_help_main_v1"/>
+
+
+    <ImageView
+        android:id="@+id/iv_reg_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="217dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm1"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_site"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_site"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:id="@+id/tv_konkuk_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="건국대학교 사이트"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_site"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_site"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_site"
+        android:layout_marginEnd="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_reg_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="217dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm2"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_system"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_system"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:id="@+id/tv_konkuk_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학사정보시스템"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_system"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_system"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_system"
+        android:layout_marginEnd="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_reg_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="249dp"
+        android:layout_marginTop="217dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm3"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_noti"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_noti"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공지사항"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_noti"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_noti"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_noti"
+        android:layout_marginEnd="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_reg_sche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="324dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm4"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_sche"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_sche"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학사 일정"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_sche"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_sche"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_sche"
+        android:layout_marginEnd="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_reg_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="324dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm5"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_food"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_food"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학사 관련 정보"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_food"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_food"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_food"
+        android:layout_marginEnd="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_reg_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reg_site"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="249dp"
+        android:layout_marginTop="324dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/worm6"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_map"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_map"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학교 지도"
+        android:textSize="12sp"
+        android:fontFamily="@font/pretendardregular"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_reg_map"
+        app:layout_constraintTop_toTopOf="@id/iv_reg_map"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_reg_map"
+        android:layout_marginEnd="3dp"/>
+
+
+
+
+
+
+    
+
+
+
 
 
 
