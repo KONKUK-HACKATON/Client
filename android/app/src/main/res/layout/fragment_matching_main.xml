@@ -87,14 +87,31 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-    <ImageView
-        android:id="@+id/iv_matching_main_write"
+
+
+    <FrameLayout
+        android:id="@+id/fl_matching_main_write_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_write"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_matching_main_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_write"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/iv_matching_main_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancle"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+
+    </FrameLayout>
 
     <View
         android:id="@+id/v_matchin_main_gray"
@@ -106,18 +123,22 @@
     <FrameLayout
         android:id="@+id/fl_matching_main_write_matching"
         android:layout_width="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/fl_matching_main_write_btn"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="117dp">
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="59dp">
 
         <ImageView
+            android:id="@+id/iv_matching_main_btn_matching"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/btn_write_matching"/>
+            android:src="@drawable/btn_write_matching"
+            android:visibility="gone"/>
 
         <ImageView
+            android:id="@+id/iv_matching_main_btn_matching_selected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/btn_write_matching_selected"
@@ -129,15 +150,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/fl_matching_main_write_matching"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="29dp">
+        android:layout_marginEnd="26dp">
 
         <ImageView
+            android:id="@+id/iv_matching_main_btn_issue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/btn_write_issue"/>
+            android:src="@drawable/btn_write_issue"
+            android:visibility="gone"/>
         <ImageView
+            android:id="@+id/iv_matching_main_btn_issue_selecteed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/btn_write_issue_selected"
