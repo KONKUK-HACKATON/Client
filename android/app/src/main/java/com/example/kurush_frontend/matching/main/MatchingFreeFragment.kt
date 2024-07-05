@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.kurush_frontend.R
 import com.example.kurush_frontend.data.HorizonData
 import com.example.kurush_frontend.data.VerticalData
 import com.example.kurush_frontend.databinding.FragmentMatchingFreeBinding
+import com.example.kurush_frontend.matching.add.MatchingAddFragment
 import com.example.kurush_frontend.matching.main.adapter.HorizonRVAdapter
 import com.example.kurush_frontend.matching.main.adapter.VerticalRVAdapter
 
@@ -29,6 +31,10 @@ class MatchingFreeFragment : Fragment() {
         binding.rvMatchingFreeVertical.adapter = VerticalRVAdapter(dummyItemsVer)
 
         binding.ivMatchingFreeAddBtn.setOnClickListener{
+            binding.ivMatchingFreeAddBtn.setImageResource(R.drawable.btn_add_match_select)
+
+            parentFragmentManager.beginTransaction().replace(R.id.main_frm, MatchingAddFragment())
+                .commit()
 
         }
 
