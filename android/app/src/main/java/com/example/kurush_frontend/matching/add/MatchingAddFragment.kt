@@ -6,12 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import retrofit2.Call
+import retrofit2.Callback
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.example.kurush_frontend.R
+import com.example.kurush_frontend.data.request.LoginRequest
+import com.example.kurush_frontend.data.response.LoginResponse
 import com.example.kurush_frontend.databinding.FragmentMatchingAddBinding
 import com.example.kurush_frontend.matching.main.MatchingMainFragment
+import com.example.kurush_frontend.retrofit.RetrofitObject
+import com.example.kurush_frontend.retrofit.retrofit_if.RetrofitIF
+import retrofit2.Response
 
 class MatchingAddFragment : Fragment() {
     lateinit var binding : FragmentMatchingAddBinding
@@ -37,7 +44,37 @@ class MatchingAddFragment : Fragment() {
                 .commit()
         }
 
+        initRetrofit()
+
         return binding.root
+    }
+
+    private fun initRetrofit() {
+        val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
+
+        val login = LoginRequest("test", "test")
+        Log.d("ll", "ll")
+        service.login(login).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                Log.d("lg", "lg")
+                if(response.isSuccessful) {
+                    Log.d("suc", "suc")
+                    val result = response.body()
+                    if(result!=null){
+                        Log.d("jwt", result.accessToken)
+                    }
+                }else{
+                    Log.d("fail", response.toString())
+                }
+            }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                Log.e("MainActivity", "Request failed: ${t.message}")
+            }
+
+        })
+
+
     }
 
     private fun setupSpinner() {
