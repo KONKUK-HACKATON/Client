@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.transition.Visibility
 import com.example.kurush_frontend.databinding.FragmentMatchingMainBinding
 import com.example.kurush_frontend.matching.main.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -21,8 +22,12 @@ class MatchingMainFragment : Fragment() {
 
         initTabLayout()
 
-        binding.ivMatchingMainWrite.setOnClickListener{
-
+        binding.flMatchingMainWriteBtn.setOnClickListener{
+            binding.vMatchinMainGray.alpha = 0.5F
+            binding.ivMatchingMainWrite.visibility = View.GONE
+            binding.ivMatchingMainCancle.visibility = View.VISIBLE
+            binding.ivMatchingMainBtnMatching.visibility = View.VISIBLE
+            binding.ivMatchingMainBtnIssue.visibility = View.VISIBLE
         }
 
 

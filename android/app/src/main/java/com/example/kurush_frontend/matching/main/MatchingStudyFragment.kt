@@ -39,9 +39,6 @@ class MatchingStudyFragment : Fragment() {
 
         }
 
-//        binding.iv
-
-
         return binding.root
     }
 
