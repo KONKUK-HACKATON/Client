@@ -4,16 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kurush_frontend.data.VerticalData
+import com.example.kurush_frontend.data.response.PostData
 import com.example.kurush_frontend.databinding.ItemMatchingListVerticalBinding
 
-class VerticalRVAdapter(val items: ArrayList<VerticalData>) : RecyclerView.Adapter<VerticalRVAdapter.ViewHolder>() {
+class VerticalRVAdapter(val items: List<PostData>) : RecyclerView.Adapter<VerticalRVAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemMatchingListVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item : VerticalData) {
+        fun bind(item : PostData) {
             binding.tvItemMatchingListVerticalNickname.text = item.nickname
             binding.tvItemMatchingListVerticalTitle.text = item.title
-            binding.tvItemMatchingListHorizonContents.text = item.contents
-            binding.tvItemMatchingListHorizonReply.text = item.replies.toString()
+            binding.tvItemMatchingListHorizonContents.text = item.content
+            binding.tvItemMatchingListHorizonReply.text = "0"
         }
     }
 
