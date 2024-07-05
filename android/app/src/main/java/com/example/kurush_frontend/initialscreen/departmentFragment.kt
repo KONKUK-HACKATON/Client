@@ -1,5 +1,7 @@
 package com.example.kurush_frontend.initialscreen
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.example.kurush_frontend.MainActivity
 import com.example.kurush_frontend.R
 import com.example.kurush_frontend.databinding.FragmentDepartmentBinding
 
@@ -21,8 +24,25 @@ class departmentFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding= FragmentDepartmentBinding.inflate(inflater,container,false)
+        initSP()
         setupSpinner()
         return binding.root
+    }
+
+    private fun initSP() {
+        binding.ivNextBtn.setOnClickListener {
+            // 초기 설정 완료 시 SharedPreferences에 저장
+            val sharedPreferences = requireActivity().getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+            with(sharedPreferences.edit()) {
+                putBoolean("is_initial_setup_completed", true)
+                apply()
+            }
+
+            // MainActivity로 이동
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
     }
 
     fun setupSpinner() {
