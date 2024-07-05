@@ -19,10 +19,11 @@ class MatchingMainFragment : Fragment() {
     ): View? {
         binding = FragmentMatchingMainBinding.inflate(inflater, container, false)
 
-
         initTabLayout()
 
+        binding.ivMatchingMainWrite.setOnClickListener{
 
+        }
 
 
         return binding.root
