@@ -27,7 +27,15 @@ class departmentFragment : Fragment() {
         initSP()
         setupSpinner()
         binding.ivNextBtn.setOnClickListener {
-            val fragment=studennumFragment()
+            val colleage = binding.spCollege.selectedItem.toString()
+            val department=binding.spDepartment.selectedItem.toString()
+            val bundle = Bundle().apply {
+                putString("colleage", colleage)
+                putString("major", department)
+            }
+            val fragment = studennumFragment().apply {
+                arguments = bundle
+            }
             parentFragmentManager.beginTransaction()
                 .replace(R.id.login_frame,fragment)
                 .commit()

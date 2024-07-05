@@ -20,7 +20,13 @@ class studennumFragment : Fragment() {
         binding=FragmentStudennumBinding.inflate(inflater,container,false)
         setupSpinner()
         binding.ivNextBtnStudent.setOnClickListener {
-            val fragment=nationFragment()
+            val studentNumber=binding.spStudentNum.selectedItem.toString()
+            val bundle = arguments ?: Bundle()  // 이전 번들을 가져옴
+            bundle.putString("studentNumber", studentNumber)  // 새로운 데이터를 추가
+
+            val fragment = nationFragment().apply {
+                arguments = bundle
+            }
             parentFragmentManager.beginTransaction()
                 .replace(R.id.login_frame,fragment)
                 .commit()

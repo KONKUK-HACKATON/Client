@@ -16,6 +16,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
+    private var colleage: String? = null
+    private var major: String? = null
+    private var memberId: Int? = null
+    private var studentNumber: Int? = null
+    private var nation: String? = null
+    private var language: String? = null
+    private var singularity: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
