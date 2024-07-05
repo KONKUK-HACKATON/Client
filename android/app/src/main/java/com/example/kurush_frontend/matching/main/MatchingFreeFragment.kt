@@ -33,8 +33,9 @@ class MatchingFreeFragment : Fragment() {
         binding.ivMatchingFreeAddBtn.setOnClickListener{
             binding.ivMatchingFreeAddBtn.setImageResource(R.drawable.btn_add_match_select)
 
-            parentFragmentManager.beginTransaction().replace(R.id.main_frm, MatchingAddFragment())
-                .commit()
+            parentFragment?.parentFragmentManager?.beginTransaction()
+                ?.replace(R.id.main_frm, MatchingAddFragment())
+                ?.commit()
 
         }
 
