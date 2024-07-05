@@ -26,6 +26,12 @@ class departmentFragment : Fragment() {
         binding= FragmentDepartmentBinding.inflate(inflater,container,false)
         initSP()
         setupSpinner()
+        binding.ivNextBtn.setOnClickListener {
+            val fragment=studennumFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.login_frame,fragment)
+                .commit()
+        }
         return binding.root
     }
 

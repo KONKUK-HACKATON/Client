@@ -24,6 +24,10 @@ class logInFragment : Fragment() {
         // 초기 설정 완료 여부 확인
         val sharedPreferences = requireActivity().getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
         val isInitialSetupCompleted = sharedPreferences.getBoolean("is_initial_setup_completed", false)
+        // 초기 설정을 확인한 후 resetInitialSetup() 함수를 호출하여 초기화
+        if (!isInitialSetupCompleted) {
+            resetInitialSetup()
+        }
 
         binding.ivLoginBtn.setOnClickListener {
             val fragment = departmentFragment()
@@ -40,7 +44,22 @@ class logInFragment : Fragment() {
             }
         }
 
+
         return binding.root
+    }
+
+    // 초기 설정 완료 여부를 저장하는 함수
+    fun setInitialSetupCompleted(isCompleted: Boolean) {
+        val sharedPreferences = requireContext().getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+        with(sharedPreferences.edit()) {
+            putBoolean("is_initial_setup_completed", isCompleted)
+            apply()
+        }
+    }
+
+    // 초기 설정 완료 여부를 초기화하는 함수
+    fun resetInitialSetup() {
+        setInitialSetupCompleted(false)
     }
 
 }

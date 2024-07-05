@@ -1,5 +1,6 @@
 package com.example.kurush_frontend.initialscreen
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.example.kurush_frontend.databinding.ActivityOnboardingBinding
 
 class LogInActivity : AppCompatActivity() {
     lateinit var binding:ActivityLogInBinding
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityLogInBinding.inflate(layoutInflater)

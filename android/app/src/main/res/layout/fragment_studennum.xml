@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="717dp"
+        android:layout_marginTop="690dp"
         />
 
     <Spinner
