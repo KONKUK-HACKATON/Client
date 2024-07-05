@@ -1,5 +1,6 @@
 package com.example.kurush_frontend.matching.main.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,10 +12,12 @@ class VerticalRVAdapter(val items: List<PostData>) : RecyclerView.Adapter<Vertic
 
     inner class ViewHolder(val binding: ItemMatchingListVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item : PostData) {
-            binding.tvItemMatchingListVerticalNickname.text = item.nickname
-            binding.tvItemMatchingListVerticalTitle.text = item.title
-            binding.tvItemMatchingListHorizonContents.text = item.content
-            binding.tvItemMatchingListHorizonReply.text = "0"
+                 binding.tvItemMatchingListVerticalNickname.text = item.nickname
+                 binding.tvItemMatchingListVerticalTitle.text = item.title
+                 binding.tvItemMatchingListHorizonContents.text = item.content
+                 binding.tvItemMatchingListHorizonReply.text = "댓글"
+                 binding.tvTempMatchingListReplyNumbers.text = "0"
+
         }
     }
 
@@ -22,8 +25,10 @@ class VerticalRVAdapter(val items: List<PostData>) : RecyclerView.Adapter<Vertic
         parent: ViewGroup,
         viewType: Int
     ): VerticalRVAdapter.ViewHolder {
+
         val binding = ItemMatchingListVerticalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: VerticalRVAdapter.ViewHolder, position: Int) {

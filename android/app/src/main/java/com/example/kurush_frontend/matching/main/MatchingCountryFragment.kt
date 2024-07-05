@@ -33,6 +33,7 @@ class MatchingCountryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMatchingCountryBinding.inflate(inflater, container, false)
+        var searchData = arguments?.getString("searchData")
 
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
 
@@ -58,6 +59,7 @@ class MatchingCountryFragment : Fragment() {
 
         Log.d("arg", arguments.toString())
         dummyItemsHor = arguments?.getSerializable("matchDataList") as MatchingDataList
+
 
         val items : List<MatchingData> = dummyItemsHor.data
         binding.rvMatchingCountryHorizon.adapter = HorizonRVAdapter(items)

@@ -23,15 +23,16 @@ import retrofit2.Response
 class MatchingMainFragment : Fragment() {
     lateinit var binding: FragmentMatchingMainBinding
     private val tabList = arrayListOf("스터디", "생활습관", "국가별", "자유")
+    lateinit var searchData :String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMatchingMainBinding.inflate(inflater, container, false)
+        searchData = binding.etMatchingMain.text.toString()
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
         var matchDataList : MatchingDataList
-//        matchDataList = MatchingDataList()
 
         service.getMatchingList().enqueue(object : Callback<MatchingDataResponse>{
             override fun onResponse(
@@ -46,7 +47,8 @@ class MatchingMainFragment : Fragment() {
                         Log.d("user", result.toString())
                         matchDataList = MatchingDataList(result.data)
                         Log.d("da", matchDataList.toString())
-                        initTabLayout(matchDataList)
+                        initTabLayout(matchDataList, searchData)
+                        initSearch(matchDataList)
                     }
                 }
             }
@@ -67,6 +69,14 @@ class MatchingMainFragment : Fragment() {
             binding.ivMatchingMainCancle.visibility = View.VISIBLE
             binding.ivMatchingMainBtnMatching.visibility = View.VISIBLE
             binding.ivMatchingMainBtnIssue.visibility = View.VISIBLE
+
+            binding.ivMatchingMainCancle.setOnClickListener {
+                binding.vMatchinMainGray.alpha = 0F
+                binding.ivMatchingMainWrite.visibility = View.VISIBLE
+                binding.ivMatchingMainCancle.visibility = View.GONE
+                binding.ivMatchingMainBtnMatching.visibility = View.GONE
+                binding.ivMatchingMainBtnIssue.visibility = View.GONE
+            }
 
             // 매칭 게시글 작성
             binding.ivMatchingMainBtnMatching.setOnClickListener {
@@ -95,9 +105,17 @@ class MatchingMainFragment : Fragment() {
         return binding.root
     }
 
-    private fun initTabLayout(matchDataList: MatchingDataList) {
+    private fun initSearch(matchDataList: MatchingDataList) {
+        binding.ivMatchingMainSearch.setOnClickListener {
 
-        binding.vpMatchingMain.adapter = ViewPagerAdapter(this, matchDataList)
+            searchData = binding.etMatchingMain.text.toString()
+            binding.vpMatchingMain.adapter = ViewPagerAdapter(this, matchDataList, searchData)
+        }
+    }
+
+    private fun initTabLayout(matchDataList: MatchingDataList, searchData: String) {
+
+        binding.vpMatchingMain.adapter = ViewPagerAdapter(this, matchDataList, searchData)
         TabLayoutMediator(binding.tlMatchingMain, binding.vpMatchingMain) { tab, position ->
             tab.text = tabList[position]
         }.attach()

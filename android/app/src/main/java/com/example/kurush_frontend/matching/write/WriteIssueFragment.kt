@@ -27,6 +27,12 @@ class WriteIssueFragment : Fragment() {
     ): View? {
         binding = FragmentWriteIssueBinding.inflate(layoutInflater, container, false)
 
+        binding.ivIssueAddBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, MatchingMainFragment())
+                .commit()
+        }
+
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
 
         binding.ivWriteIssueUpload.setOnClickListener {
