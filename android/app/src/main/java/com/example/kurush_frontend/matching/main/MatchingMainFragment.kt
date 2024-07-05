@@ -28,6 +28,15 @@ class MatchingMainFragment : Fragment() {
             binding.ivMatchingMainCancle.visibility = View.VISIBLE
             binding.ivMatchingMainBtnMatching.visibility = View.VISIBLE
             binding.ivMatchingMainBtnIssue.visibility = View.VISIBLE
+
+            binding.ivMatchingMainBtnIssue.setOnClickListener {
+                binding.ivMatchingMainBtnIssue.visibility = View.GONE
+                binding.ivMatchingMainBtnIssueSelecteed.visibility = View.VISIBLE
+
+
+
+            }
+
         }
 
 
