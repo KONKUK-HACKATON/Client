@@ -4,15 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kurush_frontend.data.HorizonData
+import com.example.kurush_frontend.data.response.MatchingData
+import com.example.kurush_frontend.data.response.MatchingDataList
 import com.example.kurush_frontend.databinding.ItemMatchingListHorizonBinding
 
-class HorizonRVAdapter(val items : ArrayList<HorizonData>) : RecyclerView.Adapter<HorizonRVAdapter.ViewHolder>() {
+class HorizonRVAdapter(val items : List<MatchingData>) : RecyclerView.Adapter<HorizonRVAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemMatchingListHorizonBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item: HorizonData) {
+        fun bind(item: MatchingData) {
             binding.tvItemMatchingListHorizonNickname.text = item.nickname
-            binding.tvItemMatchingListHorizonDepartment.text = item.department
-            binding.tvItemMatchingListHorizonCountry.text = item.country
+            binding.tvItemMatchingListHorizonDepartment.text = item.major
+            binding.tvItemMatchingListHorizonCountry.text = item.nation
+            binding.tvItemMatchingListHorizonCollege.text = item.college
             binding.tvItemMatchingListHorizonGender.text = item.gender
         }
     }
