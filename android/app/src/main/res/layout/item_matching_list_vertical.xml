@@ -34,19 +34,49 @@
         android:layout_marginTop="39dp"/>
     
     <TextView
+        android:id="@+id/tv_item_matching_list_horizon_contents"
         android:layout_width="332dp"
         android:layout_height="34dp"
         android:textSize="14sp"
         android:textFontWeight="400"
         android:fontFamily="@font/pretendardregular"
         android:textColor="@color/black"
-        android:text="게시글 내용 컨텐츠"
+        android:text="텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미
+텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미"
         android:layout_marginTop="62dp"
         android:layout_marginStart="19dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
+        android:maxLines="2"
+        android:ellipsize="end"
         />
+    
+    <TextView
+        android:id="@+id/tv_item_matching_list_horizon_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:text="댓글"
+        android:textSize="12sp"
+        android:textFontWeight="700"
+        android:fontFamily="@font/pretendardregular"
+        android:textColor="#B3B3B3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="105dp"
+        android:layout_marginStart="23dp"/>
+
+    <TextView
+        android:id="@+id/tv_temp_matching_list_reply_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_item_matching_list_horizon_reply"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_matching_list_horizon_reply"
+        app:layout_constraintStart_toEndOf="@id/tv_item_matching_list_horizon_reply"
+        android:layout_marginStart="3dp"
+        android:text="0"
+        android:fontFamily="@font/pretendardregular"
+        android:textColor="#B3B3B3"/>
+
 
 
 
