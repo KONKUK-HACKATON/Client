@@ -28,6 +28,10 @@ class MatchingFreeFragment : Fragment() {
 
         binding.rvMatchingFreeVertical.adapter = VerticalRVAdapter(dummyItemsVer)
 
+        binding.ivMatchingFreeAddBtn.setOnClickListener{
+
+        }
+
         return binding.root
     }
 
