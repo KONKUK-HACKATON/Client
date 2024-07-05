@@ -77,6 +77,12 @@
         android:fontFamily="@font/pretendardregular"
         android:textColor="#B3B3B3"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DADADA"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="141dp"/>
 
 
 
