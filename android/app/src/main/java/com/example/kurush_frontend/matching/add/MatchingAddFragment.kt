@@ -13,21 +13,30 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.example.kurush_frontend.R
 import com.example.kurush_frontend.data.request.LoginRequest
+import com.example.kurush_frontend.data.request.MatchingAddRequest
 import com.example.kurush_frontend.data.response.LoginResponse
+import com.example.kurush_frontend.data.response.MatchingAddResponse
 import com.example.kurush_frontend.databinding.FragmentMatchingAddBinding
 import com.example.kurush_frontend.matching.main.MatchingMainFragment
 import com.example.kurush_frontend.retrofit.RetrofitObject
 import com.example.kurush_frontend.retrofit.retrofit_if.RetrofitIF
+import com.google.gson.Gson
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MatchingAddFragment : Fragment() {
+    private val BASE_URL = "http://13.125.122.128:8080"
+    lateinit var bundle: Bundle
+
     lateinit var binding : FragmentMatchingAddBinding
-    private val bundle = Bundle()
+    lateinit var matchAddRequest : MatchingAddRequest
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        bundle = Bundle()
         binding = FragmentMatchingAddBinding.inflate(layoutInflater, container, false)
         setupSpinner()
 
@@ -39,37 +48,51 @@ class MatchingAddFragment : Fragment() {
 
         binding.ivMatchingAddBtn.setOnClickListener {
             //TODO : Post 기능 추가
+            initRetrofit()
+
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main_frm, MatchingMainFragment())
                 .commit()
         }
 
-        initRetrofit()
+
 
         return binding.root
     }
 
     private fun initRetrofit() {
+
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
 
-        val login = LoginRequest("test", "test")
-        Log.d("ll", "ll")
-        service.login(login).enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                Log.d("lg", "lg")
-                if(response.isSuccessful) {
-                    Log.d("suc", "suc")
+        matchAddRequest = bundle.getString("gender")?.let {
+            MatchingAddRequest(
+                binding.etMatchingAddNickname.text.toString(),
+                binding.etMatchingAddCountry.text.toString(),
+                it,
+                bundle.getString("college")!!,
+                bundle.getString("department")!!
+            )
+        }!!
+
+        service.addMatchingList(
+            matchAddRequest
+        ).enqueue(object : Callback<MatchingAddResponse> {
+            override fun onResponse(
+                call: Call<MatchingAddResponse>,
+                response: Response<MatchingAddResponse>
+            ) {
+                if(response.isSuccessful){
                     val result = response.body()
-                    if(result!=null){
-                        Log.d("jwt", result.accessToken)
+                    if (result!=null){
+                        Log.d("result", result.toString())
                     }
-                }else{
-                    Log.d("fail", response.toString())
+                    }else{
+                        Log.d("res", response.toString())
                 }
             }
 
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Log.e("MainActivity", "Request failed: ${t.message}")
+            override fun onFailure(call: Call<MatchingAddResponse>, t: Throwable) {
+                Log.d("err", "err")
             }
 
         })
@@ -125,6 +148,7 @@ class MatchingAddFragment : Fragment() {
                         id: Long
                     ) {
                         selectedDepartmentIndex = parent?.selectedItemPosition ?: 0
+
 
                         bundle.putString("college", collegeItems[selectedCollegeIndex])
                         bundle.putString("department", selectedDepartments[selectedDepartmentIndex])
