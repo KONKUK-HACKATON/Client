@@ -24,7 +24,7 @@ class OnboardingActivity : AppCompatActivity() {
         // 일정 시간 지연 이후 실행하기 위한 코드
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val intent=Intent(this,LogInActivity::class.java)
+            val intent=Intent(this,MainActivity::class.java)
             startActivity(intent)
 
 //            val fragment=logInFragment()
