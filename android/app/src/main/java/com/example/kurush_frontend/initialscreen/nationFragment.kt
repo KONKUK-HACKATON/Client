@@ -15,6 +15,12 @@ class nationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentNationBinding.inflate(inflater,container,false)
+        binding.ivNextBtnNation.setOnClickListener{
+            val fragment=eatingFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.login_frame,fragment)
+                .commit()
+        }
         return binding.root
     }
 

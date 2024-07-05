@@ -19,6 +19,12 @@ class studennumFragment : Fragment() {
     ): View? {
         binding=FragmentStudennumBinding.inflate(inflater,container,false)
         setupSpinner()
+        binding.ivNextBtnStudent.setOnClickListener {
+            val fragment=nationFragment()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.login_frame,fragment)
+                .commit()
+        }
         return binding.root
     }
 
