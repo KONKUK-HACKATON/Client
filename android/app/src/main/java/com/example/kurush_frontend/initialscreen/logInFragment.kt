@@ -30,7 +30,7 @@ class logInFragment : Fragment() {
         // 초기 설정 완료 여부 확인
         val sharedPreferences = requireActivity().getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
         val isInitialSetupCompleted = sharedPreferences.getBoolean("is_initial_setup_completed", false)
-
+        Log.d("flag", isInitialSetupCompleted.toString())
         binding.ivLoginBtn.setOnClickListener {
             val username = binding.etId.text.toString()
             val password = binding.etPw.text.toString()
