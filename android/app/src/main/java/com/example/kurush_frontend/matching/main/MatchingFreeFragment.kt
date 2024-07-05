@@ -33,6 +33,7 @@ class MatchingFreeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMatchingFreeBinding.inflate(inflater, container, false)
+        var searchData = arguments?.getString("searchData")
 
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
 

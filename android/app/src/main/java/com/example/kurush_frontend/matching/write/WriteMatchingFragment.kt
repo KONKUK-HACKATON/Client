@@ -31,6 +31,12 @@ class WriteMatchingFragment : Fragment() {
         binding = FragmentWriteMatchingBinding.inflate(layoutInflater, container, false)
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
 
+        binding.ivMatchingAddBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, MatchingMainFragment())
+                .commit()
+        }
+
         var f1 =true
         var f2 = true
         var f3 = true

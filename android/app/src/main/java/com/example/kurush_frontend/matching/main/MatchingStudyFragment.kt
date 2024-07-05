@@ -33,6 +33,7 @@ class MatchingStudyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMatchingStudyBinding.inflate(inflater, container, false)
+        var searchData = arguments?.getString("searchData")
 
         var dummyItemsVer : PostDataList
         val service = RetrofitObject.retrofit.create(RetrofitIF::class.java)
@@ -59,6 +60,7 @@ class MatchingStudyFragment : Fragment() {
 
         Log.d("arg", arguments.toString())
         dummyItemsHor = arguments?.getSerializable("matchDataList") as MatchingDataList
+
 
 
         val items : List<MatchingData> = dummyItemsHor.data

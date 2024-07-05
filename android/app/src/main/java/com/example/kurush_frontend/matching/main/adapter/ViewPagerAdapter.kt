@@ -11,13 +11,14 @@ import com.example.kurush_frontend.matching.main.MatchingFreeFragment
 import com.example.kurush_frontend.matching.main.MatchingHabitFragment
 import com.example.kurush_frontend.matching.main.MatchingStudyFragment
 
-class ViewPagerAdapter(fragment : Fragment, var matchDataList: MatchingDataList) : FragmentStateAdapter(fragment){
+class ViewPagerAdapter(fragment : Fragment, var matchDataList: MatchingDataList, var searchData : String) : FragmentStateAdapter(fragment){
 
     override fun getItemCount(): Int = 4
 
     override fun createFragment(position: Int): Fragment {
         val bundle = Bundle()
         bundle.putSerializable("matchDataList", matchDataList)
+        bundle.putString("searchData", searchData)
         val matchingStudyFragment = MatchingStudyFragment()
         matchingStudyFragment.arguments = bundle
         val matchingCountryFragment = MatchingCountryFragment()
