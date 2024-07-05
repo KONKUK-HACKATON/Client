@@ -39,6 +39,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="13.5dp"
                 android:layout_marginEnd="16dp"/>
+            
+<!--            <ImageView-->
+<!--                android:layout_width=""-->
+<!--                android:layout_height=""-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_matching_free_horizon"
