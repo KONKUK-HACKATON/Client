@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.kurush_frontend.databinding.ActivityMainBinding
+import com.example.kurush_frontend.help.HelpMainFragment
 import com.example.kurush_frontend.initialscreen.departmentFragment
 import com.example.kurush_frontend.initialscreen.eatingFragment
 import com.example.kurush_frontend.initialscreen.studennumFragment
@@ -33,6 +34,27 @@ class MainActivity : AppCompatActivity() {
 
 //        supportFragmentManager.beginTransaction().replace(R.id.main_frm, )
 //            .commitAllowingStateLoss()
-
+        initBottomNavigation()
+    }
+    private fun initBottomNavigation() {
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.fragment_addUser -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, MatchingMainFragment())
+                        .commit()
+                    true
+                }
+                R.id.fragment_calendar -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, HelpMainFragment())
+                        .commit()
+                    true
+                }
+                else -> {
+                    true
+                }
+            }
+        }
     }
 }
