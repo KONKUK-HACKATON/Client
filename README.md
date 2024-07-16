@@ -1,5 +1,5 @@
 
-# 건국대학교 유학생의 정보제공 및 매칭 서비스, 꼬물가이드 <img alt="image" width="100" src="https://github.com/KONKUK-HACKATON/.github/assets/58305106/a25fe8a2-aa99-4275-ab6f-5d2d58675f39" align="left"> 
+# 건국대학교 유학생의 정보제공 및 매칭 서비스, 꼬물가이드
 
 ![image](https://github.com/KONKUK-HACKATON/.github/assets/58305106/2a82f5d5-a69e-450b-a94f-40d0994a4d3f)
 
