@@ -9,6 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.kurush_frontend.R
 import com.example.kurush_frontend.databinding.FragmentHelpMainBinding
+import com.example.kurush_frontend.initialscreen.LogInActivity
+import com.example.kurush_frontend.initialscreen.departmentFragment
+import com.example.kurush_frontend.initialscreen.logInFragment
+import com.example.kurush_frontend.matching.add.MatchingAddFragment
 
 class HelpMainFragment : Fragment() {
     lateinit var binding:FragmentHelpMainBinding
@@ -26,6 +30,11 @@ class HelpMainFragment : Fragment() {
         binding.tvKonkukSite.setOnClickListener {
             val url = "https://kuis.konkuk.ac.kr/index.do"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
+
+        binding.ivSchoolMap.setOnClickListener {
+            val intent=Intent(requireContext(), HelpActivity::class.java)
             startActivity(intent)
         }
         return binding.root

@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,5 +59,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.2");
 
     implementation("androidx.cardview:cardview:1.0.0");
+
+    implementation("com.naver.maps:map-sdk:3.18.0")
 
 }
